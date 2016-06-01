@@ -15,6 +15,24 @@ public class Puck : MonoBehaviour
 		_rigidBody.AddForce (direction.normalized * _speed);
 	}
 
+	void OnCollisionEnter2D (Collision2D c)
+	{
+		IHitable hitableObject = c.gameObject.GetComponent<IHitable> ();
+		if (hitableObject != null)
+		{ 
+			hitableObject.OnPuckEnter ();
+		}
+	}
+
+	void OnCollisionExit2D (Collision2D c)
+	{
+		IHitable hitableObject = c.gameObject.GetComponent<IHitable> ();
+		if (hitableObject != null)
+		{ 
+			hitableObject.OnPuckExit ();
+		}
+	}
+
 	public Transform _puckPrefab;
 	public float _size;
 	public float _speed;

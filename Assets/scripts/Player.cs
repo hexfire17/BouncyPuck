@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown (0)) 
 		{
+			if (_puck != null) { Destroy (_puck.gameObject); }
+
 			Vector3 spawnPosition = _camera.ScreenToWorldPoint (Input.mousePosition);
 			spawnPosition.z = 0;
 			_puck = Instantiate (_puckPrefab, spawnPosition, _puckPrefab.transform.rotation) as Puck; 

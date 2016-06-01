@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/Puck.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/SoftTarget.cs">
     <Files>
-      <File FileName="Assets/scripts/Player.cs" Line="29" Column="33" />
-      <File FileName="Assets/scripts/Puck.cs" Line="29" Column="43" />
+      <File FileName="Assets/scripts/Puck.cs" Line="38" Column="22" />
+      <File FileName="Assets/scripts/Player.cs" Line="16" Column="52" />
+      <File FileName="Assets/scripts/SoftTarget.cs" Line="20" Column="1" />
+      <File FileName="Assets/scripts/IHitable.cs" Line="6" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
