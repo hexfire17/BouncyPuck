@@ -12,7 +12,8 @@ public class SoftTarget : MonoBehaviour, IHitable
 	{
 		Debug.Log ("Destroy soft");
 		Destroy (gameObject);
-		Instantiate (_deathEffect, transform.position, transform.rotation);
+		ParticleSystem deathEffect = Instantiate (_deathEffect, transform.position, transform.rotation) as ParticleSystem;
+		deathEffect.transform.localScale = transform.localScale;
 	}
 
 	public ParticleSystem _deathEffect;

@@ -49,10 +49,9 @@ public class LevelGenerator : MonoBehaviour
 			levelObject._scale = child.localScale;
 			levelObject._rotation = child.transform.rotation;
 			levelObject._transform = _softTargetPrefab;
-
+			Debug.Log ("Type: " + child.GetType ());
 			_currentLevel._levelObjects.Add (levelObject);
 		}
-
 	}
 		
 	void OnNextLevel(int levelIndex)
