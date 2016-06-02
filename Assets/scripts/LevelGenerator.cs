@@ -24,7 +24,7 @@ public class LevelGenerator : MonoBehaviour
 			
 			Transform target = Object.Instantiate (_softTargetPrefab, o._position, o._rotation) as Transform;
 			target.transform.localScale = o._scale;
-			t.parent = GetLevelHolder ();
+			target.parent = GetLevelHolder ();
 		}
 	}
 
