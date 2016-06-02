@@ -7,12 +7,26 @@ public class LevelEditor : Editor
 {
 	public override void OnInspectorGUI()
 	{
-		if (DrawDefaultInspector () || GUILayout.Button("Generate Level"))
+		base.OnInspectorGUI ();
+		if ( GUILayout.Button("Generate Level"))
 		{
-			base.OnInspectorGUI ();
-			Debug.Log("GUI inspected, regenerating level");
-			LevelGenerator generator = target as LevelGenerator;
-			generator.GenerateLevel ();
+			GetGenerator ().GenerateLevel ();
 		}
+
+		if (GUILayout.Button ("Soft Object"))
+		{
+			GetGenerator ().NewSoftObject ();
+		}
+
+		if (GUILayout.Button ("Save Level"))
+		{
+			GetGenerator ().SaveLevel ();
+		}
+	}
+
+	LevelGenerator GetGenerator ()
+	{
+		LevelGenerator generator = target as LevelGenerator;
+		return generator;
 	}
 }
