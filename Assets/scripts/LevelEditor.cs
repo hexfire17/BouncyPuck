@@ -8,7 +8,7 @@ public class LevelEditor : Editor
 	public override void OnInspectorGUI()
 	{
 		base.OnInspectorGUI ();
-		if ( GUILayout.Button("Generate Level"))
+		if (GUILayout.Button("Generate Level"))
 		{
 			GetGenerator ().GenerateLevel ();
 		}

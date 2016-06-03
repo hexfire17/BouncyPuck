@@ -27,17 +27,25 @@ public class Player : MonoBehaviour
 			_aimDirection = _puck.transform.position - _camera.ScreenToWorldPoint (Input.mousePosition);
 			_isAiming = false;
 			_puck.launch (_aimDirection);
+			Destroy (_aimParticles.gameObject);
 		}
-		else if (_isAiming) 
-		{
-			_aimDirection = _puck.transform.position - _camera.ScreenToWorldPoint (Input.mousePosition);
+		else if (_isAiming) {
+			if (_aimParticles == null) {
+				_aimParticles = Instantiate (_aimParticlePrefab, _puck.transform.position, _aimParticlePrefab.transform.rotation) as ParticleSystem;
+			}
+
+			Vector3 pointerPosition = _camera.ScreenToWorldPoint (Input.mousePosition);
+			_aimParticles.transform.LookAt (2 * _aimParticles.transform.position - pointerPosition);
+			_aimDirection = _puck.transform.position - pointerPosition;
 		}
 	}
 
 	public Puck _puckPrefab;
+	public ParticleSystem _aimParticlePrefab;
 
 	Puck _puck;
 	Camera _camera;
+	ParticleSystem _aimParticles;
 
 	bool _isAiming;
 	Vector2 _aimDirection;
